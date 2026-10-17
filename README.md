@@ -20,3 +20,4 @@ Cambodia. Course project: Introduction to Software Engineering.
 ## Build
     cmake -S. -B build
     cmake --build build
+
