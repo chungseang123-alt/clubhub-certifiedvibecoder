@@ -1,23 +1,15 @@
-# ITC Club Hub · Team CertifiedVibeCoder
+# Lab-01 · Software Development Challenges (v1.0, 2026-17-10)
 
-An application for the student clubs of the Institute of Technology of
-Cambodia. Course project: Introduction to Software Engineering.
+## Files of this lab
+| File | Task | Authors |
+|------|------|---------|
+| lab01/team-charter.md | 1 | |
+| ... | | |
+| CMakeLists.txt, include/clubhub/banner.hpp, src/*.cpp | 5 | |
 
-## Team
-| Member | GitHub | Role (Sprint 1) |
-|--------|--------|-----------------|
-|Sok Chungseang | chungseang123-alt | Scrubmaster|
-<!-- each member adds their own row in their own commit -->
+Inputs reused from earlier labs: none (first lab).
 
-## Repository layout
-| Path | Content |
-|------|---------|
-| `lab01/` ... `lab11/` | Documents of each lab |
-| `include/clubhub/`    | Public C++ headers (namespace clubhub) |
-| `src/`                | C++ sources |
-| `tests/`              | Unit tests (added in a later lab) |
-
-## Build
-    cmake -S. -B build
-    cmake --build build
-
+## Change log
+| Date | Version | Change | Commit |
+|------|---------|--------|--------|
+| 2026-__-__ | v0.1.0 | Team, repository, failure analysis, problem statement, first build | abc1234 |
