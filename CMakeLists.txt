@@ -16,6 +16,7 @@ if(MSVC)
 else()
     target_compile_options(clubhub_core PRIVATE -Wall -Wextra -Wpedantic)
 endif()
+    target_include_directories(clubhub_core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 # Executable: the command-line front end
 add_executable(clubhub src/main.cpp)

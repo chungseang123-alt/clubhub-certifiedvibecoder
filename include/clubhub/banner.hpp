@@ -1,5 +1,5 @@
-// include/clubhub/banner.hpp
-#pragma once
+#ifndef BANNER_HPP
+#define BANNER_HPP
 
 #include <string>
 #include <string_view>
@@ -13,3 +13,4 @@ inline constexpr std::string_view kTeamName = "CertifiedVibeCoder";
 [[nodiscard]] std::string banner(std::string_view teamName);
 
 }  // namespace clubhub
+#endif  // BANNER_HPP
