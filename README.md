@@ -6,6 +6,7 @@ Cambodia. Course project: Introduction to Software Engineering.
 ## Team
 | Member | GitHub | Role (Sprint 1) |
 |--------|--------|-----------------|
+|Oeung Keangheang | oeung-keangheang | Product Owner|
 |Sok Chungseang | chungseang123-alt | Scrubmaster|
 <!-- each member adds their own row in their own commit -->
 
