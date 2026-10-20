@@ -18,6 +18,7 @@ Testing/
 *.exe
 *.pdb
 # editors and operating systems
+.vscode/
 .vs/
 .idea/
 *.swp
