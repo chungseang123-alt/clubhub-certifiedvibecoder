@@ -8,6 +8,7 @@ Cambodia. Course project: Introduction to Software Engineering.
 |--------|--------|-----------------|
 |Oeung Keangheang | oeung-keangheang | Product Owner|
 |Sok Chungseang | chungseang123-alt | Scrubmaster|
+|Seng Sarak | sarakseng | Developer|
 <!-- each member adds their own row in their own commit -->
 
 ## Repository layout
