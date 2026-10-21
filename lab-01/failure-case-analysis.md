@@ -1,5 +1,6 @@
 # Failure case analysis · <case> (v1.1, 2026-20-10)
 Authors: <member per section>
+	Song Panhaseth ##3
         Oeung Keangheang ## 6
         Seng Sarak ## 4
 
@@ -13,10 +14,16 @@ The Horizon computer system was full of glitches and accounting mistakes. Branch
 
 ```mermaid
 flowchart TD
-  A["Software bugs and accounting errors"] --> B["Incorrect branch balances"]
-  B --> C["Complaints not properly investigated"]
-  C --> D["Wrongful accusations and convictions"]
-  D --> E["Financial and personal harm"]
+    R1["R1: Software bugs and accounting errors"]
+    R2["R2: Fujitsu staff could remotely alter accounting data"]
+    R3["R3: Management over-trusted Horizon records"]
+
+    R1 --> A["Incorrect or unexplained branch balances"]
+    R2 --> A
+    A --> B["Complaints not properly investigated"]
+    R3 --> B
+    B --> C["Wrongful accusations and convictions"]
+    C --> D["Financial and personal harm"]
 ```
 
 ## 4. Root causes
