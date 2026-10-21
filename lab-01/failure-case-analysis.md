@@ -9,14 +9,14 @@ Authors: <member per section>
 |------|-------|
 
 ## 3. What failed
-<one paragraph>
+The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get>
 
 ```mermaid
 flowchart TD
-  A["root cause"] --> B["..."]
-  B --> C["..."]
-  C --> D["..."]
-  D --> E["impact"]
+  A["Software bugs and accounting errors"] --> B["Incorrect branch balances"]
+  B --> C["Complaints not properly investigated"]
+  C --> D["Wrongful accusations and convictions"]
+  D --> E["Financial and personal harm"]
 ```
 
 ## 4. Root causes
