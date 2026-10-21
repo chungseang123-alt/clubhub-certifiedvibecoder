@@ -1,4 +1,4 @@
-# Problem statement · ITC Club Hub (v0.1, 2026-17-10)
+# Problem statement · ITC Club Hub (v0.2, 2026-21-10)
 
 ## Problem
 The problem of ____________________ affects ____________________;
