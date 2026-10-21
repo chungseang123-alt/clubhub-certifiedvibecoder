@@ -12,31 +12,34 @@ Organization:
 - Post Office Limited
 - Fujitsu
 - Subpostmasters
+
 System: 
 - Legacy Horizon: first deployment was affected by software bugs. 
 - Horizon Online: Centralized re-architecture that continued generating false accounting losses.
 - HNG-A: Windows-based platform iteration.
+
 Users: 
 - Subpostmasters using counter terminals under strict contractual shortfall liability
-- Fujitsu Support Personnel possessing privileged access rights to remotely insert or edit branch database transactions. 
+- Fujitsu Support Personnel possessing privileged access rights to remotely insert or edit branch database transactions.
+
 Why it matters: 
-- A lot of subpostmaster were wrongly convicted of theft and false accounting while thousands more were forced to pay out of their own pocket for non-existent shortfall. This injustice led to a lot of bankruptcy and repossession.
-- Post office and Fujitsu knew of the software bugs and covert remote database access tools, yet continue to publicly state that Horizon was infallible. They then continue to blamed postmaster regularly without allowing them access to backend audit. 
-- The High court judgement shattered the legal fiction of system reliability which prompted the largest mass quashing of conviction .
+- A lot of subpostmaster were wrongly convicted of theft and false accounting, while thousands more were forced to pay out of their own pocket for non-existent shortfall. This injustice led to a lot of bankruptcies and repossessions.
+- Post Office and Fujitsu knew of the software bugs and covert remote database access tools, yet continued to publicly state that Horizon was infallible. They then continue to blame the postmaster regularly without allowing them access to backend audits. 
+- The High Court judgment shattered the legal fiction of system reliability, which prompted the largest mass quashing of convictions.
 ## 2. Timeline
 | Date | Event |
 |------|-------|
 |1999–2000|Post Office Counters Limited begins roll-out of the Horizon IT system across branches and Crown Offices, Internal Fujutsu incident logs records major software errors which causes large false branch discrepancies.|
-|2005|The discovery of a critical navigation bug at the callendar square branch stock transfer failing to appear on the recieving end.|
+|2005|The discovery of a critical navigation bug at the Callender Square branch stock transfer failing to appear on the receiving end.|
 |2010|Transition to Horizon Online, Major cache bug which causes shortfalls to zero out on counter screens.|
 |2010–2015|The appearance of Local suspense bug and Dalmellington outreach bug.|
-|2015–2016|It was concluded that the system at Horizon IT wasnt fit for purpose and was too expensive on top of the fact that it was difficult to change.| 
-|2017|Transition to window based architecture|
-|December 2019|Court confirms software bugs caused actual branch shortfalls and Fuhitsu was held un-audited remote access capabilities to alter branch figures.|
+|2015–2016|It was concluded that the system at Horizon IT wasn't fit for purpose and was too expensive, on top of the fact that it was difficult to change.| 
+|2017|Transition to window-based architecture|
+|December 2019|Court confirms software bugs caused actual branch shortfalls and Fujitsu was held un-audited remote access capabilities to alter branch figures.|
 
 
 ## 3. What failed
-The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get into the system from afar — they could even change accounting records if they wanted. The Post Office trusted Horizon way too much and didn’t bother digging into complaints like it should have. Because of all that, some sub-postmasters got blamed and convicted unfairly, and it ruined their finances and lives.
+The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get into the system from afar — they could even change accounting records if they wanted. The Post Office trusted Horizon way too much and didn’t bother digging into complaints as it should have. Because of all that, some sub-postmasters got blamed and convicted unfairly, and it ruined their finances and lives.
 
 ```mermaid
 flowchart TD
@@ -67,7 +70,7 @@ flowchart TD
 | R3: Post Office management blindly trusted the computer system | Independent review of the system's records before acting on them; logging and counting user complaints | Chapter 10, Chapter 03 |
 
 ## 6. Lessons for ITC Club Hub
-1. Fail Safe on Network Syncs so the system processes only the first request and safely discards the retries if thre's a network issue. Additionally, Enforce Atomic Transactions where every multi-step operation must be wrapped in a single atomic database transaction (ACID compliant). If the user's connection drops halfway through a submission, the system must rollback completely rather than recording a partial state.
+1. Fail-safe on Network Syncs so the system processes only the first request and safely discards the retries if there's a network issue. Additionally, Enforce Atomic Transactions where every multi-step operation must be wrapped in a single atomic database transaction (ACID-compliant). If the user's connection drops halfway through a submission, the system must roll back completely rather than recording a partial state.
 2. Provide Full User-Facing Audit Logs by building an immutable, user-visible Audit Trail Log page where officers and club members can view every balance change along with its timestamp, performing user ID, and source event ID. Upon data entry, enforce strict schema validation by rejecting inputs that are not integers between 1 and 500 and rejecting any event CSV upload that contains missing member IDs, invalid date formats, or duplicate email addresses.
 ## 7. Sources
 1. <author or organisation, title, year, URL> (primary)
