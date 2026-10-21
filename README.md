@@ -10,6 +10,7 @@ Cambodia. Course project: Introduction to Software Engineering.
 |Sok Chungseang | chungseang123-alt | Scrubmaster|
 |Seng Sarak | sarakseng | Developer|
 |Pheng Sopheak | pheakpheng594-prog | Developer| 
+|Song Panhaseth | sethpanha902-arch | Developer|
 
 ## Repository layout
 | Path | Content |
