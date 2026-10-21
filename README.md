@@ -38,9 +38,7 @@ Inputs reused from earlier labs: none (first lab).
 | 2026-21-10 | v0.1.0 | Branch lab-01: Updated the decisions log | ad10f3fde5592004b6f9b297a004b2bbe4140200 |
 | 2026-21-10 | v0.1.0 | Branch lab-01: Fix version only showing 0 to now show 0.1.0 by Sok Chungseang | fc596e61026b7aaeab2b667cc7ab17e371bb0223 |
 | 2026-21-10 | v0.1.0 | Branch lab-01: Added agreed by Pheng Sopheak | 355c14a221072f6a78ef52670a08cc60e6da45dc |
-| 2026-21-10 | v0.1.0 | Branch lab-01: Added Section 6 with its source and updated the version and date on Failure-case-analysis
- | be57725f2d55088c4440486bab2f3e8948e06bf9 |
- | 2026-21-10 | v0.1.0 | Branch Main: Added Oeung Keangheang to the Agreed by list
- | 6d296a8331e7b7972afaed86ba2a80806bf72e26 |
+| 2026-21-10 | v0.1.0 | Branch lab-01: Added Section 6 with its source and updated the version and date on Failure-case-analysis| be57725f2d55088c4440486bab2f3e8948e06bf9 |
+| 2026-21-10 | v0.1.0 | Branch Main: Added Oeung Keangheang to the Agreed by list| 6d296a8331e7b7972afaed86ba2a80806bf72e26 |
 
 
