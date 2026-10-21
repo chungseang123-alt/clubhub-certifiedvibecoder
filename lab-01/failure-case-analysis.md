@@ -1,7 +1,7 @@
 # Failure case analysis · <case> (v1.1, 2026-20-10)
 Authors: <member per section>
         Sok Chungseang ## 1 & 2
-
+	      Song Panhaseth ## 3
         Seng Sarak ## 4
         Pheng Sopheak ## 5
         Oeung Keangheang ## 6
@@ -36,14 +36,20 @@ Why it matters:
 
 
 ## 3. What failed
-<one paragraph>
+The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get into the system from afar — they could even change accounting records if they wanted. The Post Office trusted Horizon way too much and didn’t bother digging into complaints like it should have. Because of all that, some sub-postmasters got blamed and convicted unfairly, and it ruined their finances and lives.
 
 ```mermaid
 flowchart TD
-  A["root cause"] --> B["..."]
-  B --> C["..."]
-  C --> D["..."]
-  D --> E["impact"]
+    R1["R1: Software bugs and accounting errors"]
+    R2["R2: Fujitsu staff could remotely alter accounting data"]
+    R3["R3: Management over-trusted Horizon records"]
+
+    R1 --> A["Incorrect or unexplained branch balances"]
+    R2 --> A
+    A --> B["Complaints not properly investigated"]
+    R3 --> B
+    B --> C["Wrongful accusations and convictions"]
+    C --> D["Financial and personal harm"]
 ```
 
 ## 4. Root causes
