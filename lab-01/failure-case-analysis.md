@@ -9,7 +9,7 @@ Authors: <member per section>
 |------|-------|
 
 ## 3. What failed
-The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get>
+The Horizon computer system was full of glitches and accounting mistakes. Branch balances went off, money just disappeared without explanation. Fujitsu employees could get into the system from afar — they could even change accounting records if they wanted. The Post Office trusted Horizon way too much and didn’t bother digging into complaints like it should have. Because of all that, some sub-postmasters got blamed and convicted unfairly, and it ruined their finances and lives.
 
 ```mermaid
 flowchart TD
