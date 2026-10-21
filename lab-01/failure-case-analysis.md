@@ -1,4 +1,4 @@
-# Failure case analysis · <case> (v1.0, 2026-17-10)
+# Failure case analysis · <case> (v1.1, 2026-20-10)
 Authors: <member per section>
         Oeung Keangheang ## 6
 
