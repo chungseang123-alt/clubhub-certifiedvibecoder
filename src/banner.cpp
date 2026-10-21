@@ -9,7 +9,7 @@ std::string banner(std::string_view teamName) {
     out += rule;
     out += '\n';
     out += "ITC Club Hub v";
-    out += '0.1.0';
+    out += "0.1.0";
     out += '\n';
     out += "Team: ";
     out += teamName;
