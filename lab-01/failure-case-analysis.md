@@ -21,7 +21,9 @@ flowchart TD
 ## 4. Root causes
 | # | Root cause | Type | Essential difficulty | Why |
 |---|------------|------|----------------------|-----|
-| R1 |           | technical / process / organisational | | |
+| R1 |           | technical | complexity | |
+| R2 |           | process | invisibility | |
+| R3 |           | organisational | conformity | |
 
 ## 5. Practices that would have prevented or limited it
 | Root cause | Practice | Chapter |
