@@ -1,4 +1,4 @@
-# Failure risks · ITC Club Hub (v0.1, 2026-17-10)
+# Failure risks · ITC Club Hub (v0.2, 2026-21-10)
 | # | How the project could fail | Chapter 01 topic | Early warning sign | First countermeasure | Owner |
 |---|----------------------------|------------------|--------------------|----------------------|-------|
 | F1 | Business rule logic (e.g., checking if cancellation is within 24h or if a club is approved) is duplicated across CLI handlers and CSV parsers, leading to inconsistent enforcement. | essential difficulties (invisibility) | Business rule validations appear in both `src/main.cpp` and `include/clubhub/` files simultaneously. | Enforce a single validation function per business rule within `namespace clubhub` and back it with unit tests. | Oeung Keangheang |
