@@ -1,7 +1,7 @@
 # Failure case analysis · <case> (v1.1, 2026-20-10)
 Authors: <member per section>
         Sok Chungseang ## 1 & 2
-	      Song Panhaseth ## 3
+	    Song Panhaseth ## 3
         Seng Sarak ## 4
         Pheng Sopheak ## 5
         Oeung Keangheang ## 6
