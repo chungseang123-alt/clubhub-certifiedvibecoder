@@ -2,6 +2,7 @@
 
 ## Files of this lab
 | File | Task | Authors |
+|------|------|---------|
 | .gitignore, LICENSE, lab01/.gitkeep, lab01/decisions.md, lab01/team-charter.md | 2 | Everyone |
 | lab01/failure-case-analysis.md | 3 | Everyone |
 | lab01/problem-statement.md, lab01/stakeholders.md, lab01/failure-risks.md | 4 | Oeung Keangheang |
