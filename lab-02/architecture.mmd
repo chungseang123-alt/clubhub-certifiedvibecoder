@@ -1,14 +1,46 @@
 flowchart TB
   subgraph P[Presentation]
-    CLI[C++ CLI · src/cli/]
-    %% TODO: the front ends from ADR-001
+    direction LR
+    STUDENT[Student PWA - modelled]
+    ORGANISER[Organiser offline PWA - modelled]
+    ADMIN[Admin and club-leader web PWA - modelled]
+    CLI[C++ CLI - src/cli/ - implemented this semester]
   end
+
   subgraph L[Logic]
-    RS[RegistrationService · include/clubhub/, src/]
+    direction LR
+    API[HTTPS API and auth - future, modelled]
+    ES[EventService and Event - include/clubhub/, src/ - C++ core]
+    RS[RegistrationService - include/clubhub/, src/ - C++ planned]
   end
+
   subgraph D[Data]
-    CSV[(CSV files · data/)]
+    direction LR
+    CSV[(CSV files - data/ - this semester)]
+    DB[(Database later - modelled)]
   end
-  CLI --> RS
-  RS --> CSV
-  %% TODO: external systems, and mark implemented vs modelled nodes
+
+  MAIL[[E-mail service - external]]
+  DIR[[ITC student directory - external]]
+
+  STUDENT -->|events, registrations| API
+  ORGANISER -->|check-in and sync| API
+  ADMIN -->|approvals and reports| API
+  API -->|event operations| ES
+  API -->|registration operations| RS
+  CLI -->|direct core calls| ES
+  CLI -->|future CLI commands| RS
+  ES -->|load and save event data| CSV
+  RS -->|registration data| CSV
+  ES -.->|future persistence| DB
+  RS -.->|future persistence| DB
+  RS -->|confirmation or reminder request| MAIL
+  RS -->|student ID lookup| DIR
+  DIR -->|verified student details| RS
+
+  classDef implemented fill:#dcfce7,stroke:#15803d,color:#14532d,stroke-width:2px
+  classDef planned fill:#fef3c7,stroke:#b45309,color:#78350f,stroke-width:2px
+  classDef modelled fill:#e5e7eb,stroke:#6b7280,color:#111827,stroke-dasharray:5 4
+  class CLI,ES,CSV implemented
+  class RS planned
+  class STUDENT,ORGANISER,ADMIN,API,DB,MAIL,DIR modelled

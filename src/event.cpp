@@ -1,5 +1,6 @@
 #include "clubhub/event.hpp"
 
+#include <cctype>
 #include <iomanip>
 #include <sstream>
 #include <stdexcept>
@@ -11,21 +12,37 @@ Event::Event(std::string id, std::string title, TimePoint start,
              std::string location, int capacity)
     : id_{std::move(id)}, title_{std::move(title)}, start_{start},
       location_{std::move(location)}, capacity_{capacity} {
-    // TODO: throw std::invalid_argument when id_ or title_ is empty
-    // TODO: throw std::invalid_argument when capacity_ <= 0
+    if (id_.empty()) {
+        throw std::invalid_argument{"id must not be empty"};
+    }
+    if (title_.empty()) {
+        throw std::invalid_argument{"title must not be empty"};
+    }
+    if (capacity_ <= 0) {
+        throw std::invalid_argument{"capacity must be positive"};
+    }
 }
 
 TimePoint parseTimePoint(const std::string& text) {
     using namespace std::chrono;
-    std::istringstream in{text};
-    int y{}, mo{}, d{}, h{}, mi{};
-    char dash1{}, dash2{}, colon{};
-    in >> y >> dash1 >> mo >> dash2 >> d >> h >> colon >> mi;
+    const auto invalid = [&text]() {
+        throw std::invalid_argument{"bad date-time '" + text + "'"};
+    };
+    if (text.size() != 16 || text[4] != '-' || text[7] != '-' ||
+        text[10] != ' ' || text[13] != ':') {
+        invalid();
+    }
+    for (std::size_t i = 0; i < text.size(); ++i) {
+        if (i == 4 || i == 7 || i == 10 || i == 13) continue;
+        if (!std::isdigit(static_cast<unsigned char>(text[i]))) invalid();
+    }
+    const int y = std::stoi(text.substr(0, 4));
+    const int mo = std::stoi(text.substr(5, 2));
+    const int d = std::stoi(text.substr(8, 2));
+    const int h = std::stoi(text.substr(11, 2));
+    const int mi = std::stoi(text.substr(14, 2));
     const year_month_day date{year{y}, month{static_cast<unsigned>(mo)},
                               day{static_cast<unsigned>(d)}};
-    // TODO: throw std::invalid_argument{"bad date-time '" + text + "'"}
-    //       unless the stream is good, the separators are '-', '-', ':',
-    //       nothing follows, date.ok(), 0 <= h <= 23 and 0 <= mi <= 59
     return sys_days{date} + hours{h} + minutes{mi};
 }
 

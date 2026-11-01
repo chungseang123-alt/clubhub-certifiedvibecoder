@@ -17,12 +17,20 @@ int listEvents(const std::string& path) {
         return 2;
     }
     auto [events, errors] = clubhub::loadEventsCsv(file);
-    // TODO: sort events by start time (std::ranges::sort, projection
-    //       &clubhub::Event::start)
-    // TODO: print a header line and one aligned row per event
-    //       (std::left, std::setw; formatTimePoint for the start)
-    // TODO: print "<n> event(s)", then every error to std::cerr as
-    //       <path>:<line>: skipped: <message>
+    std::ranges::sort(events, {}, &clubhub::Event::start);
+    std::cout << std::left << std::setw(18) << "START"
+              << std::setw(22) << "TITLE" << std::setw(15) << "LOCATION"
+              << "CAPACITY\n";
+    for (const auto& event : events) {
+        std::cout << std::left << std::setw(18) << clubhub::formatTimePoint(event.start())
+                  << std::setw(22) << event.title()
+                  << std::setw(15) << event.location()
+                  << event.capacity() << '\n';
+    }
+    std::cout << events.size() << " event(s)\n";
+    for (const auto& error : errors) {
+        std::cerr << path << ':' << error.line << ": skipped: " << error.message << '\n';
+    }
     return errors.empty() ? 0 : 1;
 }
 

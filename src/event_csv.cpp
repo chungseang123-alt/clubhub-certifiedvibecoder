@@ -13,11 +13,40 @@ EventLoadResult loadEventsCsv(std::istream& in) {
     std::getline(in, line);  // skip the header
     while (std::getline(in, line)) {
         ++lineNo;
-        // TODO: strip a trailing '\r' (files edited on Windows)
-        // TODO: split the line at ',' into fields; expect exactly 5
-        // TODO: build an Event (parseTimePoint for the start, an int for
-        //       the capacity) and add it to result.events; on
-        //       std::invalid_argument add {lineNo, e.what()} to result.errors
+        if (!line.empty() && line.back() == '\r') line.pop_back();
+        try {
+            std::vector<std::string> fields;
+            std::size_t begin = 0;
+            for (;;) {
+                const auto comma = line.find(',', begin);
+                if (comma == std::string::npos) {
+                    fields.push_back(line.substr(begin));
+                    break;
+                }
+                fields.push_back(line.substr(begin, comma - begin));
+                begin = comma + 1;
+            }
+            if (fields.size() != 5) {
+                throw std::invalid_argument{"expected exactly 5 fields"};
+            }
+            std::size_t consumed = 0;
+            int capacity{};
+            try {
+                capacity = std::stoi(fields[4], &consumed);
+            } catch (const std::out_of_range&) {
+                throw std::invalid_argument{"invalid capacity"};
+            } catch (const std::invalid_argument&) {
+                throw std::invalid_argument{"invalid capacity"};
+            }
+            if (consumed != fields[4].size()) {
+                throw std::invalid_argument{"invalid capacity"};
+            }
+            result.events.emplace_back(fields[0], fields[1],
+                                       parseTimePoint(fields[2]), fields[3], capacity);
+            } 
+        catch (const std::invalid_argument& e) {
+            result.errors.push_back({lineNo, e.what()});
+        }
     }
     return result;
 }
