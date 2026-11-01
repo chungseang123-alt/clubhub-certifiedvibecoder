@@ -17,7 +17,7 @@ D. Responsive web application for everyone, without installability/offline suppo
 ## Weighted comparison (score 1-5 x weight)
 | Criterion (weight) | why this weight | A | B | C | D |
 |--------------------|-----------------|---|---|---|---|
-| Cost for our team in one semester (3) | Limited time and a 6 person beginner team make implementation/maintenance cost critical. | 2 × 3 = 6 | 3 × 3 = 9| 5 × 3 = 15| 5 × 3 = 15|
+| Cost for our team in one semester (3) | Limited time and a 5 person beginner team make implementation/maintenance cost critical. | 2 × 3 = 6 | 3 × 3 = 9| 5 × 3 = 15| 5 × 3 = 15|
 | Reach (3)                             | Students use mixed Android/iOS devices; access should not depend on a specific platform.| 5 × 3 = 15| 5 × 3 = 15| 5 × 3 = 15| 5 × 3 = 15|
 | Offline check-in at the door (3)      | Entrance connectivity can fail during an event, when check-in is most important.| 5 × 3 = 15| 4 × 3 = 12| 4 × 3 = 12| 1 × 3 = 3|
 | Reminders (2)                         | Reminders reduce no-shows, but e-mail can provide a fallback when push is limited.| 5 × 2 = 10| 5 × 2 = 10| 3 × 2 = 6| 2 x 2 = 4|
