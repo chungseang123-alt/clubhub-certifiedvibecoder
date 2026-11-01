@@ -1,7 +1,7 @@
 # Lab-02 · Quality attribute scenarios for ITC Club Hub
 Version 1.0 · 2026-30-10 · Reviewed by (Scrum Master): Sok Chungseang
 
-## QAS-01 · Availability · written by __
+## QAS-01 · Availability · written by Seng Sarak
 | Part             | Content |
 |------------------|---------|
 | Source           |         |
@@ -21,7 +21,7 @@ Version 1.0 · 2026-30-10 · Reviewed by (Scrum Master): Sok Chungseang
 | Response         |         |
 | Response measure |         |
 
-## QAS-03 · Usability · written by __
+## QAS-03 · Usability · written by Seng Sarak
 | Part             | Content |
 |------------------|---------|
 | Source           |         |
