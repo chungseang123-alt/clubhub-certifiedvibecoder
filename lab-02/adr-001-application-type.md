@@ -1,5 +1,5 @@
 # ADR-001 · Application types for ITC Club Hub
-Version 1.0 · 2026-30-10 · Status: Proposed | Accepted (date) · Deciders: __
+Version 1.0 · 2026-30-10 · Status: Proposed | Accepted (11/04/26) · Deciders: Oeung Keangheang
 
 ## User groups
 | Group          | Device | Where | Connectivity | How often | Must never fail |
@@ -21,10 +21,19 @@ D. Responsive web application for everyone, without installability/offline suppo
 | Reach (3)                             | Students use mixed Android/iOS devices; access should not depend on a specific platform.| 5 × 3 = 15| 5 × 3 = 15| 5 × 3 = 15| 5 × 3 = 15|
 | Offline check-in at the door (3)      | Entrance connectivity can fail during an event, when check-in is most important.| 5 × 3 = 15| 4 × 3 = 12| 4 × 3 = 12| 1 × 3 = 3|
 | Reminders (2)                         | Reminders reduce no-shows, but e-mail can provide a fallback when push is limited.| 5 × 2 = 10| 5 × 2 = 10| 3 × 2 = 6| 2 x 2 = 4|
-| __ for administrators (2)             | | | | | |
-| **Total**                             | max is 65| = | = | = | = |
+| Desktop approvals and monthly reports for administrators (2)             |Only 2–3 users and low volume (approvals as they arrive, one report a month), but errors here affect campus-wide records. |5 × 2 = 10 | 5 × 2 = 10| 5 × 2 = 10| 5 × 2 = 10|
+| **Total**                             | max is 65| 6 + 15 + 15 + 10 + 10 = 56 | 9 + 15 + 12 + 10 + 10 = 56 | 15 + 15 + 12 + 6 + 10 = 58 | 15 + 15 + 3 + 4 + 10 = 47 |
 
-Deal-breaker check: __
+Deal-breaker check: 
+
+Deal-breakers: (1) check-in must work without Wi-Fi; (2) approvals and reports must be accessible only to administrators; (3) students must still get reminders if push is unavailable.
+
+-D fails (1). An online-only web app can’t record check-ins when the door Wi-Fi drops, so it is out regardless of its score.
+-C passes (1) with a condition. A service worker caches the check-in screen, and attendee data is pre-loaded on the organiser’s phone before the event. Check-ins are queued locally and synced when connectivity returns, with a unique check-in ID so repeated syncs don’t create duplicates. The change we add is that the organiser must open the PWA online once before the event to cache the list.
+-C passes (2). Role checks happen on the server, not just in the UI, so a student can’t reach admin routes.
+-C passes (3) with a fallback. iPhone push only works after the PWA is installed to the Home Screen, so e-mail reminders remain the fallback for everyone.
+
+Result: C survives all three, with the offline queue and e-mail fallback added.
 
 ## Decision
 One responsive PWA shared across the three primary user groups, with an appropriately permissioned club-leader view. Provide a phone-friendly student experience, an installable organiser check-in view with locally queued offline actions, and desktop-optimised administrative club approval and monthly reporting. Include an email reminder fallback and verify the offline workflow before accepting the design as feasible.
