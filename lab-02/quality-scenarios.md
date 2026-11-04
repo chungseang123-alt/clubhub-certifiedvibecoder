@@ -4,12 +4,12 @@ Version 1.0 · 2026-30-10 · Reviewed by (Scrum Master): Sok Chungseang
 ## QAS-01 · Availability · written by Seng Sarak
 | Part             | Content |
 |------------------|---------|
-| Source           |         |
-| Stimulus         |         |
-| Environment      |         |
-| Artifact         |         |
-| Response         |         |
-| Response measure |         |
+| Source           | System infrastructure |
+| Stimulus         | The database or app server crashes during high user traffic. |
+| Environment      | Friday 16:00, registration opens; 150 arrivals in 2 minutes attempting to register all at the same time. |
+| Artifact         | ITC Club Hub core service, database connection, and API backend. |
+| Response         | Automatically failover to backup database instance and restart the failed service. |
+| Response measure | System recovers and resumes normal operation in <= 30 seconds; downtime per month allowed is <= 43.8 minutes. |
 
 ## QAS-02 · Performance of check-in at the door · written by __
 | Part             | Content |
@@ -24,12 +24,12 @@ Version 1.0 · 2026-30-10 · Reviewed by (Scrum Master): Sok Chungseang
 ## QAS-03 · Usability · written by Seng Sarak
 | Part             | Content |
 |------------------|---------|
-| Source           |         |
-| Stimulus         |         |
-| Environment      |         |
-| Artifact         |         |
-| Response         |         |
-| Response measure |         |
+| Source           | A new student user attending a club event. |
+| Stimulus         | The student attempts to register for an upcoming event using their Student ID and current academic year. |
+| Environment      | Normal operation using a mobile phone browser right before registration closes. |
+| Artifact         | Student registration interface. |
+| Response         | Provides a simple, single-page form for students to input their information. |
+| Response measure | Form completed in <= 3 steps; 100% of test users submit their student ID and current year in <= 45 seconds. |
 
 ## QAS-04 · Security · written by Sok Chungseang
 | Part             | Content |
