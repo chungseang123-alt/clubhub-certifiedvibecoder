@@ -1,19 +1,25 @@
 # Ethics case analyses · ITC Club Hub
-Version 1.0 · 2026-11-11 · Leads: A = <name>, B = <name>
+Version 1.0 · 2026-11-11 · Leads: A = Song Panhaseth, B = Pheng Sopheak
 
 ## Scenario A: "Just a small report"
 | Step | Analysis |
-|------|----------|
-| 1 Facts | TODO (and what we still need to find out) |
-| 2 Stakeholders and harms | TODO |
-| 3 Codes, law, policy | SE Code principle TODO; ACM TODO; GDPR TODO |
-| 4 Options | (a) TODO (b) TODO (c) TODO |
-| 5 Tests | harm / rights / fairness / publicity for each option |
-| 6 Decision and action | TODO |
-| 7 Reflection | TODO |
+|---|---|
+| **1. Facts and what we need to find out** | A Robotics Club leader asks the development team for a report showing which students attend events organized by other clubs, so the Robotics Club can recruit them. The system collects student information and event attendance. However, the original purpose of collecting attendance information may have been event administration, not recruitment. We need to find out whether students were informed that their attendance could be shared with other clubs, whether the club leader has permission to access this information, and whether the client has approved this new purpose. |
+| **2. Stakeholders and possible harms** | **Students:** Their attendance information could be shared without their knowledge, causing privacy concerns or unwanted recruitment. **Robotics Club:** It needs useful information to recruit interested students. **Other clubs:** Their membership and event information could be exposed. **ITC Club Hub team:** The team is responsible for protecting data and maintaining trust. **Client/ITC:** Unauthorized sharing could damage the institution's reputation and create compliance risks. |
+| **3. Codes, law and policy** | **Software Engineering Code of Ethics:** Principle 1 – Public (protect the public interest and privacy); Principle 3 – Product (ensure software products meet appropriate standards); Principle 4 – Judgment (maintain professional integrity and independent judgment). **ACM Code:** 1.3 – Be honest and trustworthy; 1.6 – Respect privacy; 2.5 – Give comprehensive evaluations of computer systems and their impacts. **GDPR, where applicable:** Article 5(1)(a) – Lawfulness, fairness and transparency; Article 5(1)(b) – Purpose limitation; Article 5(1)(c) – Data minimisation; Article 5(2) – Accountability. We must also check applicable Cambodian law and ITC policies rather than assume GDPR automatically applies. |
+| **4. Options** | **(a) Provide the individual-level report immediately.** This satisfies the request quickly but may disclose personal information without proper authorization. **(b) Reject the request completely.** This protects student privacy but does not explore whether a legitimate and approved recruitment solution is possible. **(c) Pause the request and ask the client for formal approval and clarification.** Confirm the purpose, access permissions and student notice before sharing information. **(d) Offer an anonymous, aggregated report.** Provide overall attendance statistics without identifying individual students, if the information cannot reasonably be used to identify them. |
+| **5. Ethical tests** | **Option (a):** Harm – may expose students to unwanted contact. Rights – may violate privacy expectations. Fairness – students may be treated differently based on undisclosed data sharing. Publicity – difficult to defend publicly if students were unaware. **Option (b):** Harm – avoids disclosure but may prevent legitimate club recruitment. Rights – protects privacy. Fairness – applies the same restriction to everyone. Publicity – easy to explain, but may appear unnecessarily unhelpful. **Option (c):** Harm – reduces the risk of unauthorized disclosure. Rights – respects student privacy and transparency. Fairness – requires the same approval process for all clubs. Publicity – defensible because the team checks authorization first. **Option (d):** Harm – reduces exposure of individual students. Rights – better protects personal information. Fairness – gives clubs useful statistics without selectively exposing students. Publicity – generally defensible, provided the report cannot identify individuals. |
+| **6. Decision and action** | Choose **Option (c)** first and consider **Option (d)** as a safer alternative. Do not provide individual-level attendance information until the client confirms the purpose, authorization and appropriate student notice. If approved, provide only the minimum necessary information. Prefer aggregated statistics that do not identify students. Record the approval and access rules before implementing the report. |
+| **7. Reflection** | This case shows that a request that sounds small can create a serious privacy risk. Having access to information in the system does not automatically mean that every user is allowed to use it for a different purpose. The team should consider privacy and authorization before developing new reports. |
 
-**Message sent:** TODO (max. 120 words)
-**Preventive change:** TODO, issue #TODO
+**Message sent:** >Thanks for raising this. Attendance information could help the Robotics Club with recruitment. The attendance data we hold is collected for club and event administration. Before we share individual records with another club, the client needs to confirm the approved purpose, who would have access, and whether students have been notified. An aggregated report is another option: overall attendance figures with no individual students identified. We'll look at both and confirm what can be shared safely.
+**Preventive change:** Implement role-based access control. Club leaders should only see individual attendance information for their own club when authorized. Cross-club reports should use aggregated statistics and avoid identifying students.
+
+**GitHub issue:** #TODO-A – Restrict cross-club attendance reports
+**Label:** `ethics`
+
+---
 
 ## Scenario B: "Don't mention it in the demo"
 (same table)
+
