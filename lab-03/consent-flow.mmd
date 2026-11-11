@@ -1,0 +1,24 @@
+flowchart LR
+    subgraph CLI["CLI registration"]
+        C["Run clubhub register"] --> CN["We use your details to run your account. Reminders are optional.<br/>Privacy notice: lab-03/privacy-notice.md"]
+        CN --> CD["Enter student ID, name and email"]
+    end
+    subgraph WEB["Planned web registration"]
+        W["Open registration form"] --> WN["We use your details to run your account. Reminders are optional.<br/>Link Privacy notice to /privacy above the fields"]
+        WN --> WD["Enter student ID, name and email"]
+    end
+    CD --> E{"Email event reminders?<br/>Default No"}
+    WD --> E
+    E -->|Yes| EY["Select email reminders for this account"]
+    E -->|No or skipped| S{"SMS event reminders?<br/>Default No"}
+    EY --> S
+    S -->|Yes| P["Ask for phone number and validate"]
+    P -->|Valid| SY["Select SMS reminders with this number"]
+    P -->|Invalid| R{"Retry or skip SMS?"}
+    R -->|Retry| P
+    R -->|Skip| A["Create account and save selected choices"]
+    SY --> A
+    S -->|No or skipped| A
+    A --> M["Later open My profile in CLI or web"]
+    M -->|Turn off email| X["Clear email opt-in and stop optional emails"]
+    M -->|Turn off SMS| Y["Erase phone and cancel unsent SMS"]
