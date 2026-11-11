@@ -1,5 +1,5 @@
 // tests/ConsoleOutputTest.cpp
-// SPDX-License-Identifier: <your licence>  gi
+// SPDX-License-Identifier: <your licence>  
 #include "gtest/gtest.h"
 
 #include <cstdlib>
