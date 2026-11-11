@@ -1,5 +1,5 @@
 # Data inventory · ITC Club Hub
-Version 0.1 · 2026-11-11 · Authors: Sok Chungseang
+Version 0.2 · 2026-11-11 · Authors: Sok Chungseang
 
 | Field | Subject | Purpose | Legal basis / consent | Retention | Who can see it | Stored in | Decision |
 |-------|---------|---------|-----------------------|-----------|----------------|-----------|----------|
@@ -36,4 +36,8 @@ flowchart LR
 ```
 
 ## Client feedback
-- TO DO
+| Dropped field | Client objection | Outcome |
+|---|---|---|
+| profilePhoto | Organisers at a busy door may want a photo to spot fake registrations. | Dropped stays. Name plus masked ID is enough, and the student can show their student card if there is a dispute. |
+| telegramHandle | Club leaders already run Telegram groups and want to reach members. | Dropped stays. The event page can show the group's join link, so there is no per-student handle to store. |
+| attendance (Aggregate) | The clubs office wants to see who attended, not only monthly totals, to spot very active members. | Aggregate stays. The monthly report only needs club totals. Individual history is not an approved purpose, and it would need a new inventory row and a consent basis first. |

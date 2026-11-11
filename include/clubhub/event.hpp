@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 certifiedvibecoder, ITC Club Hub contributors
 // include/clubhub/event.hpp
 #pragma once
 #include <chrono>

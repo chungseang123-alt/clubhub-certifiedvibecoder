@@ -1,5 +1,5 @@
-// include/clubhub/Student.h
-// SPDX-License-Identifier: TODO (Task 3)
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 certifiedvibecoder, ITC Club Hub contributors
 #pragma once
 
 #include <optional>

@@ -1,5 +1,6 @@
 // include/clubhub/ConsoleOutput.h
-// SPDX-License-Identifier: <your licence>
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 certifiedvibecoder, ITC Club Hub contributors
 #pragma once
 
 #include <string>
