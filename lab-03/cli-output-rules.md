@@ -1,5 +1,5 @@
 # CLI output rules · ITC Club Hub
-Version 0.1 · 2026-11-11 · Authors: <Oeung Keangheang>
+Version 0.1 · 2026-11-11 · Authors: Oeung Keangheang
 
 These rules apply to the `clubhub` command-line front end. They support users who are colour-blind, use a screen reader or a braille display, work in a plain terminal, or pipe output into a file. The helpers in `include/clubhub/ConsoleOutput.h` implement rules 1, 2 and 3.
 

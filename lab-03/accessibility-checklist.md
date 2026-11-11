@@ -1,5 +1,5 @@
 # Accessibility checklist · ITC Club Hub (planned web and mobile UI)
-Target: WCAG 2.2 level AA · Version 0.1 · 2026-11-11 · Authors: <Oeung Keangheang>
+Target: WCAG 2.2 level AA · Version 0.1 · 2026-11-11 · Authors: Oeung Keangheang
 
 Scope: the PWA from ADR-001 (students, organisers, administrators). The command-line front end follows `cli-output-rules.md`.
 

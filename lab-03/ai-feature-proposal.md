@@ -1,5 +1,5 @@
 # AI feature proposal: "Recommended for you"
-Version 0.1 · 2026-11-11 · Authors: <Oeung Keangheang>
+Version 0.1 · 2026-11-11 · Authors: Oeung Keangheang
 
 Request from the clubs office: a list of five upcoming events chosen for each student from their attendance history. This proposal lets the client accept or reject the feature before any code is written. It builds on `data-inventory.md` (Task 1).
 
