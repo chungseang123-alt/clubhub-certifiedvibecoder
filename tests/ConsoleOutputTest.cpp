@@ -1,4 +1,5 @@
 // tests/ConsoleOutputTest.cpp
+// SPDX-License-Identifier: MIT
 #include "gtest/gtest.h"
 
 #include <cstdlib>
