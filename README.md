@@ -23,3 +23,7 @@ Cambodia. Course project: Introduction to Software Engineering.
 ## Build
     cmake -S. -B build
     cmake --build build
+
+## Licence
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. Third-party components and their respective licences are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

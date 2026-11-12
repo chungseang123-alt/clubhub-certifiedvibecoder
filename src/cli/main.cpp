@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 certifiedvibecoder, ITC Club Hub contributors
 // src/cli/main.cpp: the only place that talks to the user
 #include <algorithm>
 #include <fstream>
