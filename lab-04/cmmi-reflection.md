@@ -1,4 +1,4 @@
-# CMMI Reflection · Team Club Hub
+# CMMI Reflection · Team CertifiedVibeCoder ·
 
 Version 1.0 · 2026-11-26 · Bonus Challenge
 
