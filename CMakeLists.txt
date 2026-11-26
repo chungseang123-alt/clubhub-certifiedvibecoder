@@ -34,13 +34,22 @@ endif()
 # target_link_libraries(clubhub PRIVATE clubhub_core)
 
 include(FetchContent)
-FetchContent_Declare(googletest
-  URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip)
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
+)
 # Windows/MSVC: use the same runtime library as the project
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+FetchContent_MakeAvailable(googletest rapidcsv)
+FetchContent_Declare(
+    rapidcsv
+    GIT_REPOSITORY https://github.com/d99kris/rapidcsv.git
+    GIT_TAG v8.84
+    GIT_SHALLOW TRUE
+)
 
 enable_testing()
+include(GoogleTest)
 add_executable(clubhub_tests
   tests/StudentPrivacyTest.cpp
   tests/ConsoleOutputTest.cpp)
@@ -52,3 +61,14 @@ gtest_discover_tests(clubhub_tests)
 # would be another target that links the same core.
 add_executable(clubhub src/cli/main.cpp)
 target_link_libraries(clubhub PRIVATE clubhub_core)
+add_executable(csv_smoke_test 
+    tests/csv_smoke_test.cpp
+)
+target_link_libraries(csv_smoke_test PRIVATE rapidcsv GTest::gtest_main)
+gtest_discover_tests(csv_smoke_test WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(cancellation_rule_test 
+    tests/cancellation_rule_test.cpp
+)
+target_include_directories(cancellation_rule_test PRIVATE include)
+target_link_libraries(cancellation_rule_test PRIVATE GTest::gtest_main)
+gtest_discover_tests(cancellation_rule_test)
