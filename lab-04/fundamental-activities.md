@@ -1,0 +1,19 @@
+# Fundamental activities · Team CertifiedVibeCoder · v1.0 (2026-11-26)
+
+| Activity | What happens in Club Hub | Who leads (role, name) | Weeks | Artifact | Done when |
+|---|---|---|---|---|---|
+| Specification | Interview the client (instructor/TA) about clubs, events and check-in; write user stories for register, cancel, check-in and club approval; write the five business rules (capacity, no double registration, 24 h cancellation, no past events, approved clubs only) as testable requirements; build the prioritised backlog (waiting list = Should) | Product Owner, Oeung Keangheang | 5-6 | lab-05/srs.md, lab-05/backlog.md | The TA approved the SRS by email and every Must story has acceptance criteria in the backlog |
+| Design and implementation | Draw UML models (class diagram, sequence diagram for registerStudent); implement Club, Event, Student, Registration and RegistrationService (registerStudent, cancel, checkIn) in namespace clubhub; implement EventRepository and RegistrationRepository with CSV storage; build the CLI front end | Developers, Seng Sarak (Sprint 1) and Song Panhaseth (Sprint 2); Scrum Master Sok Chungseang (Sprint 1) coordinates | 7-13 | lab-06/ (UML), include/clubhub/, src/, CMakeLists.txt | Every Must story is merged to main through a reviewed pull request and the CLI demo runs register, cancel and check-in |
+| Validation | Review the SRS (week 6) and the models (week 8 checkpoint) before any code exists; GoogleTest unit tests for the capacity, duplicate, 24 h and past-event rules; peer review of every pull request; CLI demo at each sprint review | Developers, test lead Pheng Sopheak (rotates with Song Panhaseth) | 6, 8, 9-14 | tests/, CI run history (.github/workflows/ci.yml), review notes | Every Must story has passing tests in CI and the TA accepted it at the sprint review |
+| Evolution | Handle client change requests after each sprint review (e.g. "show seats left"); add the waiting list; fix defects found in the week 13 hardening; keep CHANGELOG.md and update the SRS and backlog when requirements change | Product Owner, Oeung Keangheang, with the current Scrum Master | 10-14 | CHANGELOG.md, updated lab-05/srs.md, GitHub issues labelled `change-request` | Every accepted change request is closed by a commit with updated tests, and the SRS version matches the final code |
+
+## Sub-activities and ISO/IEC/IEEE 12207 processes
+- **Specification:** elicitation (client interview), analysis (conflicts, MoSCoW priorities), specification (SRS, user stories), validation of requirements (SRS review with the TA) · 12207: Stakeholder needs and requirements definition; System/software requirements definition
+- **Design and implementation:** architecture and UML modelling, detailed design of RegistrationService and the repositories, coding in C++20, CMake build setup, code review · 12207: Architecture definition; Design definition; Implementation
+- **Validation:** unit tests, integration tests of the CSV repositories, peer review, sprint-review demo and client acceptance · 12207: Verification; Validation
+- **Evolution:** change-request handling, impact analysis (which classes, tests and SRS sections change), regression testing, changelog and release · 12207: Maintenance; Configuration management
+
+## Overlaps and loops
+1. Week 10: the Sprint 1 review shows the client wants "seats left" in the event list → new story US-21 → specification again in week 11 → implemented and tested in Sprint 2.
+2. Weeks 9-12: design and validation interleave daily: each pull request contains code and its GoogleTest tests, reviewed by a teammate before merge.
+3. Week 8: the checkpoint finds an unclear cancellation rule in the models → the SRS is corrected (specification) before Sprint 1 starts.
