@@ -1,0 +1,13 @@
+flowchart TD
+  A["Requirements phase · weeks 5-6 · Product Owner"] --> B["Modelling · week 7 · developers"]
+  B --> C["Checkpoint 1 · week 8 · whole team"]
+  C --> D[("Product backlog · Product Owner")]
+  D --> E["Sprint planning · whole team"]
+  E --> F["Develop and test · developers"]
+  F --> G["Sprint review · TA (client) and Product Owner"]
+  G --> H["Retrospective · Scrum Master"]
+  H --> I{"Another sprint?"}
+  I -- yes --> E
+  I -- no --> J["Hardening · week 13 · whole team"]
+  J --> K["Submission · week 14 · Product Owner"]
+  G -.->|new or changed stories| D
